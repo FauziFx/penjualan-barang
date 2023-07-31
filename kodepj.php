@@ -5,7 +5,7 @@
 
 	for ($i=0; $i < $lenght ; $i++) { 
 		$pos = rand(0, strlen($data)-1);
-		$string .=$data{$pos};
+		$string .=$data[$pos];
 	}
 		return $string;
 
