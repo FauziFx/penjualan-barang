@@ -5,7 +5,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 
 include "kodepj.php";
 session_start();
-if ($_SESSION['kasir']) {
+if ($_SESSION['user']) {
 
 ?>
     <!DOCTYPE html>
@@ -109,7 +109,7 @@ if ($_SESSION['kasir']) {
                         <img src="images/user.png" width="50" height="50" alt="User" />
                     </div>
                     <div class="info-container">
-                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</div>
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$_SESSION['nama']?></div>
                         <!-- <div class="email">john.doe@example.com</div> -->
                         <div class="btn-group user-helper-dropdown">
                             <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>

@@ -34,7 +34,7 @@
                             <label for="">Password</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text" name="password"  value="<?php echo $tampil['password']?>" class="form-control" />
+                                    <input type="password" name="password"  value="<?php echo $tampil['password']?>" class="form-control" />
                                 </div>
                             </div>
                          
