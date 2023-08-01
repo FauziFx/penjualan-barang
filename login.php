@@ -127,7 +127,7 @@ if ($_SESSION['kasir']) {
             session_start();
 
             if ($data['level'] == "kasir") {
-                $_SESSION['kasir'] = $data[id];
+                $_SESSION['kasir'] = $data['id'];
                 header("location:index.php");
             }
         } else {
