@@ -38,13 +38,25 @@
                                 </div>
                             </div>
                          
-
+                            <?php
+                                if($_SESSION['level'] != "karyawan"){
+                                    if($_SESSION['user'] != $id){
+                            ?>
                             <label for="">Level</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text"  name="level" value="<?php echo $tampil['level']?>" class="form-control" />
+                                    <!-- <input type="text"  name="level" value="<?php echo $tampil['level']?>" class="form-control" /> -->
+                                    <select name="level" id="" class="form-control">
+                                        <option value="">-- Pilih Level --</option>
+                                        <option value="admin"<?=$tampil['level'] == 'admin' ? ' selected="selected"' : '';?>>ADMIN</option>
+                                        <option value="karyawan"<?=$tampil['level'] == 'karyawan' ? ' selected="selected"' : '';?>>KARYAWAN</option>
+                                    </select>
                                 </div>
                             </div>
+                            <?php
+                                    }
+                                }
+                            ?>
 
 
 

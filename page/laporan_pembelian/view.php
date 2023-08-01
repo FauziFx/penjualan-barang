@@ -12,7 +12,7 @@
                             <table>
                                     <div ><br>
                                         <label>Bulan :</label>
-                                        <select name="bulan" class="number_format">
+                                        <select name="bulan" class="number_format" required>
                                             <option value="">Pilih</option>
                                             <option value="1">Januari</option>
                                             <option value="2">Februari</option>
