@@ -3,7 +3,7 @@ session_start();
 include 'koneksi.php';
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 
-if ($_SESSION['kasir']) {
+if ($_SESSION['user']) {
     header("location:index.php");
 } else {
 
@@ -126,8 +126,15 @@ if ($_SESSION['kasir']) {
         if ($ketemu >= 1) {
             session_start();
 
-            if ($data['level'] == "kasir") {
-                $_SESSION['kasir'] = $data['id'];
+            if ($data['level'] == "admin") {
+                $_SESSION['user'] = $data['id'];
+                $_SESSION['level'] = "admin";
+                $_SESSION['nama'] = $data['name'];
+                header("location:index.php");
+            }else{
+                $_SESSION['user'] = $data['id'];
+                $_SESSION['level'] = "karyawan";
+                $_SESSION['nama'] = $data['name'];
                 header("location:index.php");
             }
         } else {

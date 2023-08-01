@@ -32,9 +32,8 @@ include_once("../../koneksi.php");
     </tr>
       <?php
        $no = 1;
-
-       $sql = $koneksi->query("SELECT *, p.id AS idsup, p.stok AS stokk from tb_pembelian p LEFT JOIN tb_supplier s on p.nama_supplier=s.nama_supplier left join tb_barang b on b.kode_barcode=p.kode_barcode WHERE MONTH(tanggal)='$_POST[bulan]' ");
-
+       $bulan = $_POST['bulan'];
+       $sql = $koneksi->query("SELECT *, p.id AS idsup, p.stok AS stokk from tb_pembelian p LEFT JOIN tb_supplier s on p.nama_supplier=s.nama_supplier left join tb_barang b on b.kode_barcode=p.kode_barcode WHERE MONTH(tanggal)=$bulan ");
       while ($data = $sql->fetch_assoc()) {
         
       

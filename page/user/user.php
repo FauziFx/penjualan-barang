@@ -34,11 +34,17 @@
                                             <td><?php echo $no++;?></td>
                                             <td><?php echo $data['username']?></td>
                                             <td><?php echo $data['name']?></td>
-                                            <td><?php echo $data['level']?></td>
+                                            <td style="text-transform: uppercase;"><?php echo $data['level']?></td>
                                             <td>
-                                            	
+
                                             	<a href="?page=user&aksi=edit&id=<?php echo $data['id']?>" class="btn btn-success" >Edit</a>
-                                            	<a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data ini !')" href="?page=user&aksi=delete&id=<?php echo $data['id']?>" class="btn btn-danger" >Delete</a>
+                                                
+
+                                                <?php
+                                                if($_SESSION['user'] != $data['id']){
+                                                    echo "<a onclick='return confirm('Apakah Anda Yakin Ingin Menghapus Data ini !')' href='?page=user&aksi=delete&id=".$data['id']."' class='btn btn-danger' >Delete</a>";
+                                                }
+                                                ?>
                                             </td>
                                         </tr>
                                     	<?php } ?>

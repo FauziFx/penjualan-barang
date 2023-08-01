@@ -29,7 +29,7 @@
                             <label for="">Password</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="number" name="password"  class="form-control" />
+                                    <input type="password" name="password"  class="form-control" />
                                 </div>
                             </div>
                          
@@ -37,7 +37,12 @@
                             <label for="">Level</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="text"  name="level"  class="form-control" />
+                                    <!-- <input style="text-transform: uppercase;" type="text" value="karyawan" name="level"  class="form-control" /> -->
+                                    <select name="level" id="" class="form-control" required>
+                                        <option value="">-- Pilih Level --</option>
+                                        <option value="admin">ADMIN</option>
+                                        <option value="karyawan">KARYAWAN</option>
+                                    </select>
                                 </div>
                             </div>
 

@@ -5,7 +5,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 
 include "kodepj.php";
 session_start();
-if ($_SESSION['kasir']) {
+if ($_SESSION['user']) {
 
 ?>
     <!DOCTYPE html>
@@ -109,7 +109,7 @@ if ($_SESSION['kasir']) {
                         <img src="images/user.png" width="50" height="50" alt="User" />
                     </div>
                     <div class="info-container">
-                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</div>
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$_SESSION['nama']?></div>
                         <!-- <div class="email">john.doe@example.com</div> -->
                         <div class="btn-group user-helper-dropdown">
                             <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
@@ -134,6 +134,19 @@ if ($_SESSION['kasir']) {
                                 <span>Home</span>
                             </a>
                         </li>
+
+                        <?php
+                            if($_SESSION['level']=="karyawan"){
+                        ?>
+                        <li>
+                            <a href="?page=barang">
+                                <i class="material-icons">view_module</i>
+                                <span>Barang</span>
+                            </a>
+                        </li>
+                        <?php
+                            }else{
+                        ?>
 
 
                         <li>
@@ -170,33 +183,6 @@ if ($_SESSION['kasir']) {
                         </li>
 
 
-
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">business_center</i>
-                                <span>Transaksi Penjualan</span>
-                            </a>
-                            <ul class="ml-menu">
-
-                                <li>
-                                    <a href="?page=penjualan&kodepj=<?php echo $kode; ?>">
-                                        <i class="material-icons">shopping_cart</i>
-                                        <span>Penjualan</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="?page=laporan_penjualan">
-                                        <i class="material-icons">picture_as_pdf</i>
-                                        <span>Laporan Penjualan</span>
-                                    </a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">business_center</i>
@@ -220,11 +206,23 @@ if ($_SESSION['kasir']) {
 
                             </ul>
                         </li>
-
+                        <?php
+                            }
+                        ?>
 
 
                         <li>
+                            <?php
+                                if($_SESSION['level']=="karyawan"){
+                            ?>
+                            <a href="?page=user&aksi=edit&id=<?=$_SESSION['user']?>">
+                            <?php
+                                }else{
+                            ?>
                             <a href="?page=user">
+                            <?php
+                                }
+                            ?>
                                 <i class="material-icons">person</i>
                                 <span>User</span>
                             </a>
