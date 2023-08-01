@@ -9,7 +9,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Tambah User
+                                Edit User
                                 
                             </h2>
 					</div>

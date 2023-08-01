@@ -37,7 +37,7 @@
                             <label for="">Level</label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input style="text-transform: uppercase;" readonly type="text" value="karyawan" name="level"  class="form-control" />
+                                    <input style="text-transform: uppercase;" type="text" value="karyawan" name="level"  class="form-control" />
                                 </div>
                             </div>
 

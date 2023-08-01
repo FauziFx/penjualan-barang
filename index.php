@@ -135,6 +135,19 @@ if ($_SESSION['user']) {
                             </a>
                         </li>
 
+                        <?php
+                            if($_SESSION['level']=="karyawan"){
+                        ?>
+                        <li>
+                            <a href="?page=barang">
+                                <i class="material-icons">view_module</i>
+                                <span>Barang</span>
+                            </a>
+                        </li>
+                        <?php
+                            }else{
+                        ?>
+
 
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle">
@@ -193,11 +206,23 @@ if ($_SESSION['user']) {
 
                             </ul>
                         </li>
-
+                        <?php
+                            }
+                        ?>
 
 
                         <li>
+                            <?php
+                                if($_SESSION['level']=="karyawan"){
+                            ?>
+                            <a href="?page=user&aksi=edit&id=<?=$_SESSION['user']?>">
+                            <?php
+                                }else{
+                            ?>
                             <a href="?page=user">
+                            <?php
+                                }
+                            ?>
                                 <i class="material-icons">person</i>
                                 <span>User</span>
                             </a>
