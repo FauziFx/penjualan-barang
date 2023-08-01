@@ -170,33 +170,6 @@ if ($_SESSION['user']) {
                         </li>
 
 
-
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">business_center</i>
-                                <span>Transaksi Penjualan</span>
-                            </a>
-                            <ul class="ml-menu">
-
-                                <li>
-                                    <a href="?page=penjualan&kodepj=<?php echo $kode; ?>">
-                                        <i class="material-icons">shopping_cart</i>
-                                        <span>Penjualan</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="?page=laporan_penjualan">
-                                        <i class="material-icons">picture_as_pdf</i>
-                                        <span>Laporan Penjualan</span>
-                                    </a>
-                                </li>
-
-
-                            </ul>
-                        </li>
-
-
                         <li>
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">business_center</i>
